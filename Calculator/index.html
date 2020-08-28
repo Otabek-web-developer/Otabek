@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="panel">
+                    <input type="text"class="form-control disabled pt-5 " disabled id="natija1">
+                    <input type="text"class="form-control disabled pt-5 " disabled id="natija">
+                </div>
+                <div class="panel-button">
+                    <div class="btn-group w-100">
+                        <button type="button" id="btnx" class="btn w-100 py-2 hover" style="width: 100%; background-color: #6C757D;border: 1px solid #ffffff;color: #fff" onclick="calc('^')">^</button>
+                    </div>
+
+                    <div class="btn-group w-100">
+                        <button type="button" class="btn btn-secondary" onclick="hisob(7)">7</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(8)">8</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(9)">9</button>
+                        <button type="button" class="btn btn-secondary" onclick="calc('/')">/</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="hisob(4)">4</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(5)">5</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(6)">6</button>
+                        <button type="button" class="btn btn-secondary" onclick="calc('*')">*</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="hisob(1)">1</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(2)">2</button>
+                        <button type="button" class="btn btn-secondary" onclick="hisob(3)">3</button>
+                        <button type="button" class="btn btn-secondary" onclick="calc('-')">-</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary" onclick="hisob(0)">0</button>
+                        <button type="button" class="btn btn-secondary" onclick="delet('')">AC</button>
+                        <button type="button" class="btn btn-secondary" onclick="Equal('=')">=</button>
+                        <button type="button" class="btn btn-secondary" onclick="calc('+')">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+<script src="js/jQuery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+    var amal = '';
+    var qiymatA = '';
+    var qiymatB = '';
+    var nati = '';
+    function hisob(x) {
+        document.getElementById('natija').value = document.getElementById('natija').value + x;
+    }
+    function delet() {
+        document.getElementById('natija').value = '';
+        document.getElementById('natija1').value = '';
+    }
+    function calc(j) {
+        qiymatA = document.getElementById('natija').value;
+        if (qiymatA =='')
+        {
+            document.getElementById('natija1').value = '';
+        }else
+        document.getElementById('natija1').value = qiymatA + j;
+        switch (j) {
+            case '+':
+                amal = '+';
+                amal1 = " + ";
+
+                break;
+            case '-':
+                amal = '-';
+                amal1 = " - ";
+
+                break;
+            case '*':
+                amal = '*';
+                amal1 = " * ";
+
+                break;
+            case '/':
+                amal = '/';
+                amal1 = " / ";
+
+                break;
+            case '^':
+                amal = '^';
+                amal1 = " ^ ";
+                break;
+        }
+        document.getElementById('natija').value = '';
+    }
+    function Equal() {
+
+        qiymatB = document.getElementById('natija').value;
+        // if (qiymatB)
+        // {
+        //     document.getElementById('natija').value = eval(qiymatB);
+        // }
+        if (amal =='+')
+        {
+            nati = parseInt(qiymatA) + parseInt(qiymatB);
+        }
+        if (amal =='-')
+        {
+            nati = qiymatA - qiymatB;
+        }
+        if (amal =='*')
+        {
+            nati = qiymatA * qiymatB;
+        }
+        if (amal =='/')
+        {
+            nati = qiymatA / qiymatB;
+        }
+        if (amal =='^')
+        {
+
+
+            nati = Math.pow(qiymatA,qiymatB);
+        }
+
+        document.getElementById('natija').value = nati;
+        document.getElementById('natija1').value ='';
+    }
+</script>
+</html>

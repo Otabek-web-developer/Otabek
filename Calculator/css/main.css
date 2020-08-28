@@ -1,0 +1,51 @@
+body
+{
+   background:linear-gradient(to right,#00AAff,#00FF6C) !important;
+}
+.row
+{
+   margin-top:10% !important;
+}
+.btn-group
+{
+    display: block;
+    width: 100%;
+}
+.btn-group .btn-secondary
+{
+    display: block;
+    float: left;
+    width: 25% !important;
+    height: 80px !important;
+    border: 1px solid #ffffff;
+}
+#btnx button:hover
+{
+   background-color:#5A6268;
+}
+.panel
+{
+    background-color: rgba(0,0,0,.75) !important;
+}
+.panel input
+{
+    -webkit-border:0px;
+    border: 0px;
+    border-radius:0%;
+    background-color: rgba(0,0,0,.75) !important;
+    padding:10px 0px !important;
+    font-family: sans-serif;
+    font-size: 25px;
+    float: left;
+    text-align: right;
+    /*display: flex !important;*/
+    /*align-items: flex-end !important;*/
+    /*flex-direction: column !important;*/
+    color: #ffffff !important;
+
+}
+.panel-button
+{
+    width: 100% !important;
+}
+
